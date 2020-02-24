@@ -1,0 +1,221 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DecisionMatrix</name>
+    </assembly>
+    <members>
+        <member name="T:DecisionMatrix.Common.MatrixRandomEnum`1">
+            <summary>
+            A class implementing IRandom which used for generating pseudo-random numbers 
+            using the System.Random class from the .Net framework
+            </summary>
+        </member>
+        <member name="T:DecisionMatrix.Common.Sprite">
+            <summary>
+            represents an object that can be drawn by \ref Map
+            </summary>
+        </member>
+        <member name="F:DecisionMatrix.Common.Sprite.X">
+            <summary>
+            represents left position on map
+            </summary>
+        </member>
+        <member name="F:DecisionMatrix.Common.Sprite.Y">
+            <summary>
+            represents top position on map
+            </summary>
+        </member>
+        <member name="P:DecisionMatrix.Common.Sprite.Position">
+            <summary>
+            Gets coordinate on map
+            </summary>
+        </member>
+        <member name="F:DecisionMatrix.Common.Sprite.Color">
+            <summary>
+            Color used by PrintColor
+            </summary>
+        </member>
+        <member name="M:DecisionMatrix.Common.Sprite.PrintColor">
+            <summary>
+            prints a colored representation based on \ref ToAscii
+            </summary>
+        </member>
+        <member name="M:DecisionMatrix.Common.Sprite.ToAscii">
+            <summary>
+            single character representation
+            </summary>
+        </member>
+        <member name="T:DecisionMatrix.Common.Vector2">
+            <summary>
+            represents a coordinate on the map
+            </summary>
+        </member>
+        <member name="T:DecisionMatrix.Common.MatrixRandom">
+            <summary>
+            A class implementing IRandom which used for generating pseudo-random numbers 
+            using the System.Random class from the .Net framework
+            </summary>
+        </member>
+        <member name="M:DecisionMatrix.Common.MatrixRandom.#ctor">
+            <summary>
+            Constructs a new pseudo-random number generator 
+            with a seed based on the number of milliseconds elapsed since the system started
+            </summary>
+        </member>
+        <member name="M:DecisionMatrix.Common.MatrixRandom.#ctor(System.Double)">
+            <summary>
+            Constructs a new pseudo-random number generator with the specified seed
+            </summary>
+            <param name="seed">An Double used to calculate a starting value for the pseudo-random number sequence</param>
+        </member>
+        <member name="M:DecisionMatrix.Common.MatrixRandom.Next(System.Double)">
+            <summary>
+            Gets the next pseudo-random Double between 0 and the specified maxValue inclusive
+            </summary>
+            <param name="maxValue">Inclusive maximum result</param>
+            <returns>Returns a pseudo-random Double between 0 and the specified maxValue inclusive</returns>
+        </member>
+        <member name="M:DecisionMatrix.Common.MatrixRandom.Next(System.Double,System.Double)">
+            <summary>
+            Gets the next pseudo-random Double between the specified minValue and maxValue inclusive
+            </summary>
+            <param name="minValue">Inclusive minimum result</param>
+            <param name="maxValue">Inclusive maximum result</param>
+            <returns>Returns a pseudo-random Double between the specified minValue and maxValue inclusive</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown if maxValue equals Int32.MaxValue</exception>
+        </member>
+        <member name="M:DecisionMatrix.Common.MatrixRandom.Save">
+            <summary>
+            Saves the current state of the pseudo-random number generator
+            </summary>
+            <example>
+            If you generated three random numbers and then called Save to store the state and 
+            followed that up by generating 10 more numbers before calling Restore with the previously saved RandomState
+            the Restore method should return the generator back to the state when Save was first called.
+            This means that if you went on to generate 10 more numbers they would be the same 10 numbers that were
+            generated the first time after Save was called.
+            </example>
+            <returns>A RandomState class representing the current state of this pseudo-random number generator</returns>
+        </member>
+        <member name="M:DecisionMatrix.Common.MatrixRandom.Restore(DecisionMatrix.Common.RandomState)">
+            <summary>
+            Restores the state of the pseudo-random number generator based on the specified state parameter
+            </summary>
+            <example>
+            If you generated three random numbers and then called Save to store the state and 
+            followed that up by generating 10 more numbers before calling Restore with the previously saved RandomState
+            the Restore method should return the generator back to the state when Save was first called.
+            This means that if you went on to generate 10 more numbers they would be the same 10 numbers that were
+            generated the first time after Save was called.
+            </example>
+            <param name="state">The state to restore to, usually obtained from calling the Save method</param>
+            <exception cref="T:System.ArgumentNullException">RandomState cannot be null</exception>
+        </member>
+        <member name="T:DecisionMatrix.Common.RandomState">
+            <summary>
+            A class representing the state of a pseudo-random number generation algorithm 
+            at a point in time. This POCO (Plain Old C# Object) can be easily serialized and deserialized
+            </summary>
+        </member>
+        <member name="P:DecisionMatrix.Common.RandomState.Seed">
+            <summary>
+            The seed that was originally used to create the pseudo-random number generator
+            </summary>
+            <remarks>
+            Most generators only use 1 seed, but some like the KnownSeriesRandom generator may use multiple seeds
+            so that is why Seed is expressed as an array of Doubles here
+            </remarks>
+        </member>
+        <member name="P:DecisionMatrix.Common.RandomState.NumberGenerated">
+            <summary>
+            The number of times that the Next method has been called on the pseudo-random number generator being used
+            </summary>
+        </member>
+        <member name="T:DecisionMatrix.Needs.Safety">
+            <summary>
+            This class represents the needs for security and safety. 
+            People want control and order in their lives.  Therefore, finding a job, 
+            obtaining health insurance and health care, contributing money to a savings account, 
+            and moving into a safer neighborhood are all examples of actions motivated by the security and safety need.
+            </summary>
+        </member>
+        <member name="T:DecisionMatrix.Needs.Esteem">
+            <summary>
+            The class represents what Maslow classified into two categories: 
+            (i) esteem for oneself (dignity, achievement, mastery, independence) 
+            and (ii) the desire for reputation or respect from others (e.g., status, prestige). 
+            </summary>
+        </member>
+        <member name="T:DecisionMatrix.Needs.Growth">
+            <summary>
+            This class represents realizing personal potential, self-fulfillment, 
+            seeking personal growth and peak experiences. 
+            A desire “to become everything one is capable of becoming”
+            </summary>
+        </member>
+        <member name="T:DecisionMatrix.Needs.Social">
+            <summary>
+            This class represents the third level of human needs.
+            Social involves feelings of belongingness. 
+            The need for interpersonal relationships that motivates behavior
+            </summary>
+        </member>
+        <member name="T:DecisionMatrix.Needs.Physical">
+            <summary>
+            These are biological requirements for human survival, e.g. air, food, drink, shelter, clothing, warmth, sex, sleep.
+            Maslow considered physiological needs the most important.
+            As all the other needs become secondary until these needs are met.
+            </summary>
+        </member>
+        <member name="T:DecisionMatrix.Entities.Feature">
+            <summary>
+            A Feature represents distinctive attributes or aspects of a <see cref="T:DecisionMatrix.Entities.Entity"/> Place.
+            </summary>
+        </member>
+        <member name="T:DecisionMatrix.Entities.Character">
+            <summary>
+             This class represents a non-player character (NPC).
+             It is a character in a game which that is not controlled by a player. 
+            </summary>
+        </member>
+        <member name="P:DecisionMatrix.Entities.Character.Name">
+            <summary>
+            Unique set identifying title used to refer to a Character
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:DecisionMatrix.Entities.Character.Vicinity">
+            <summary>
+            What <see cref="T:DecisionMatrix.Common.PlaceType"/> place type is nearest the character
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:DecisionMatrix.Entities.Character.Preference">
+            <summary>
+            Sets and determines the leading tendencies for character
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:DecisionMatrix.Entities.Entity">
+            <summary>
+            This class is a noun that represents a particular portion of definite space with defined boundaries.
+            </summary>
+        </member>
+        <member name="T:Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>
